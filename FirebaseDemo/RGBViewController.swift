@@ -17,7 +17,7 @@ class RGBViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        RGBPickerView.color = UIColor.blue
+        
         RGBPickerView.frame = view.frame
         RGBPickerView.frame.origin.y = 30
         RGBPickerView.addTarget(self, action: #selector(changeColor), for: .valueChanged)
@@ -40,7 +40,7 @@ class RGBViewController: UIViewController {
         var bValue = CGFloat(0.0)
         var alphaValus = CGFloat(0.0)
         sender.color.getRed(&rValue, green: &gValue, blue: &bValue, alpha: &alphaValus)
-        RGBreference.setValue(["R": Int(rValue * 255), "G": Int(rValue * 255), "B": Int(rValue * 255)])
+        RGBreference.setValue(["R": Int(rValue * 255), "G": Int(gValue * 255), "B": Int(bValue * 255)])
     }
 
     /*
